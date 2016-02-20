@@ -1,0 +1,25 @@
+{
+  "name": "laravel",
+  "description": "",
+  "main": "",
+  "authors": [
+    "susanthawarnapura <susanthawarnapura@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/prageethwijeweera/eshop",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0",
+    "jquery": "~2.0.3"
+    
+  }
+}
