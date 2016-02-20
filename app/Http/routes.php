@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 Route::get('/test', function () {
     return ('welcome');
 });
+
+
+Route::get('/', 'eshopController@index');
+Route::get('/product', 'eshopController@show');
