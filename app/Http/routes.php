@@ -26,3 +26,5 @@ Route::post('/category/{id}', 'categoryController@show');
 Route::post('/product/{id}', 'productController@showProduct');
 
 /////////////////////////////////////////////////////////////////////
+//
+/*aa*//////////////////////
