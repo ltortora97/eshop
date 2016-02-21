@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Model\categories;
 
 class eshopController extends Controller
 {
@@ -17,7 +18,14 @@ class eshopController extends Controller
     public function index()
     {
         //
-        return view('eshop.index');
+         $items = categories::all();
+
+        //print_r($items->title);
+       /*foreach($items as $item){
+           echo  $item->title."<br/>";
+       }*/
+      
+        return view('eshop.index')->with("items",$items);;
     }
 
     /**
