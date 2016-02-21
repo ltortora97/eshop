@@ -49,9 +49,9 @@
 		<img src="{{URL::to('images/title1.gif')}}" alt="" width="168" height="42" /><br />
 			<ul id="navigation">
 
-				@foreach($items as $item)
+				@foreach($categories as $category)
 					<li class="color" >
-						<a href="{{URL('/')}}/category/{{$item["id"]}}" class="category" data-item="{{$item["id"]}}" name="_token" value="{{ csrf_token() }}">{{$item['category_name']}}</a>
+						<a href="{{URL('/')}}/category/{{$category["id"]}}" class="category" data-item="{{$category["id"]}}" name="_token" value="{{ csrf_token() }}">{{$category['category_name']}}</a>
 					</li>
 				@endforeach
 

@@ -9,42 +9,15 @@
 			<p>Dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor. invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur <br /></p>
 			<img src="images/title3.gif" alt="" width="540" height="26" class="pad25" />
 			<div class="stuff">
+
+				@foreach($latestItems5 as $item)
 				<div class="item">
-					<img src="images/pic1.jpg" alt="" width="124" height="90" />
-					<a href="{{URL::to('product')}}" class="name product" data-productid="0" name="_token" value="{{ csrf_token() }}">Name Product</a>
-					<span>$250</span>
+					<img src="{{URL::to('images')}}/{{$item['image_path']}}" alt="" width="124" height="90" />
+					<a href="{{URL::to('product')}}/{{$item['item_name']}}" class="name product" data-productid="{{$item['id']}}" name="_token" value="{{ csrf_token() }}" data-url="{{URL::to('product')}}/{{$item['id']}}">{{$item['item_name']}}</a>
+					<span>{{$item['price']}}</span>
 					<a href="#"><img src="images/zoom.gif" alt="" width="53" height="19" /></a><a href="#"><img src="images/cart.gif" alt="" width="71" height="19" /></a>
 				</div>
-				<div class="item">
-					<img src="images/pic2.jpg" alt="" width="124" height="111" />
-					<a href="{{URL::to('product')}}" class="name">Name Product</a>
-					<span>$850</span>
-					<a href="#"><img src="images/zoom.gif" alt="" width="53" height="19" /></a><a href="#"><img src="images/cart.gif" alt="" width="71" height="19" /></a>
-				</div>
-				<div class="item">
-					<img src="images/pic3.jpg" alt="" width="124" height="89" />
-					<a href="{{URL::to('product')}}" class="name">Name Product</a>
-					<span>$400</span>
-					<a href="#"><img src="images/zoom.gif" alt="" width="53" height="19" /></a><a href="#"><img src="images/cart.gif" alt="" width="71" height="19" /></a>
-				</div>
-				<div class="item">
-					<img src="images/pic4.jpg" alt="" width="124" height="89" />
-					<a href="{{URL::to('product')}}" class="name product" data-productid="">Name Product</a>
-					<span>$350</span>
-					<a href="#"><img src="images/zoom.gif" alt="" width="53" height="19" /></a><a href="#"><img src="images/cart.gif" alt="" width="71" height="19" /></a>
-				</div>
-				<div class="item">
-					<img src="images/pic5.jpg" alt="" width="124" height="97" />
-					<a href="{{URL::to('product')}}" class="name">Name Product</a>
-					<span>$250</span>
-					<a href="#"><img src="images/zoom.gif" alt="" width="53" height="19" /></a><a href="#"><img src="images/cart.gif" alt="" width="71" height="19" /></a>
-				</div>
-				<div class="item">
-					<img src="images/pic6.jpg" alt="" width="124" height="111" />
-					<a href="{{URL::to('product')}}" class="name" >Name Product</a>
-					<span>$2250</span>
-					<a href="#"><img src="images/zoom.gif" alt="" width="53" height="19" /></a><a href="#"><img src="images/cart.gif" alt="" width="71" height="19" /></a>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	  </div>
