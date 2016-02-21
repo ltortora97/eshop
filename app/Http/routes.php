@@ -20,4 +20,6 @@ Route::get('/test', function () {
 
 
 Route::get('/', 'eshopController@index');
-Route::get('/product', 'eshopController@show');
+Route::post('/product', 'productController@index');
+Route::get('/ctproduct', 'productController@categoryproducts');
+Route::post('/category/{id}', 'categoryController@show');

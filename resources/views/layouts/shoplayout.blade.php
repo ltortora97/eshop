@@ -50,8 +50,9 @@
 			<ul id="navigation">
 
 				@foreach($items as $item)
-					<li class="color"><a href="#">{{$item['category_name']}}</a></li>
-					
+					<li class="color" >
+						<a href="{{URL('/')}}/category/{{$item["id"]}}" class="category" data-item="{{$item["id"]}}" name="_token" value="{{ csrf_token() }}">{{$item['category_name']}}</a>
+					</li>
 				@endforeach
 
 
@@ -94,16 +95,6 @@
 		<p>Copyright &copy;. All rights reserved. <a href="http://www.turkhey.com/" title="Holiday Destinations in Turkey">Holiday Destinations in Turkey</a></p>
 	</div>
 	<script type="text/javascript" src="{{URL::to('lib/jquery/jquery.min.js')}}"></script>
-	<script>
-		$(document).ready(function()
-		{
-
-			alert();
-
-		});
-
-
-
-	</script>
+	<script type="text/javascript" src="{{URL::to('site.js')}}"></script>
 </body>
 </html>

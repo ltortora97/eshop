@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\category;
 
-class eshopController extends Controller
+class categoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +17,6 @@ class eshopController extends Controller
     public function index()
     {
         //
-         $items = category::all();
-
-        //print_r($items->title);
-       /*foreach($items as $item){
-           echo  $item->title."<br/>";
-       }*/
-      
-        return view('eshop.index')->with("items",$items);
     }
 
     /**
@@ -55,11 +46,12 @@ class eshopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()//$id
+    public function show($id)
     {
-        //
-        return view('eshop.product');
-    
+
+        $id;
+
+        return view('eshop.categoryProducts');
     }
 
     /**

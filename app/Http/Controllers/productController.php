@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\category;
 
-class eshopController extends Controller
+class productController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +18,17 @@ class eshopController extends Controller
     public function index()
     {
         //
-         $items = category::all();
-
-        //print_r($items->title);
-       /*foreach($items as $item){
-           echo  $item->title."<br/>";
-       }*/
-      
-        return view('eshop.index')->with("items",$items);
+        //$items = category::all();
+        return view('eshop.productAjaxLoad');
     }
 
+    public function categoryproducts()
+    {
+        //
+        $items = category::all();
+
+        return view('eshop.categoryProducts')->with("items",$items);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -55,11 +56,9 @@ class eshopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()//$id
+    public function show($id)
     {
         //
-        return view('eshop.product');
-    
     }
 
     /**
