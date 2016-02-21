@@ -4,15 +4,15 @@ $(document).ready(function()
 	$(document).on('click','.category',function(e)
 	{
 		var item = $(this).data('item');
-		alert(item);
+	//	alert(item);
 
 
 
 		_url=$(this).attr('href');
-		alert(_url);
+	//	alert(_url);
 
 		var _token=$(this).attr('value');
-		alert(_token);
+	//	alert(_token);
 
 		e.preventDefault();
 
@@ -52,18 +52,21 @@ $(document).ready(function()
 
 	$(document).on('click','.product',function(e)
 	{
-			var productid = $(this).data('productid');
-			alert(productid);
+		var productid = $(this).data('productid');
+		//alert(productid);
 
 
 
-		_url=$(this).attr('href');
-		alert(_url);
+		var _url=$(this).data('url');
+		//alert(_url);
+
+
+
 
 		var _token=$(this).attr('value');
-		alert(_token);
+		//alert(_token);
 
-		e.preventDefault();
+
 
 		jQuery.ajaxSetup({
 			headers: {
@@ -94,6 +97,7 @@ $(document).ready(function()
 //				}
 				}
 			});
+		e.preventDefault();
 	});
 
 });

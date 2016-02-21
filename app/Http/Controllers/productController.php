@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\category;
+use App\Http\Model\Category;
+use App\Http\Model\Item;
 
 class productController extends Controller
 {
@@ -17,17 +18,30 @@ class productController extends Controller
      */
     public function index()
     {
+
+
+
         //
         //$items = category::all();
-        return view('eshop.productAjaxLoad');
+        //return view('eshop.productAjaxLoad');
     }
 
-    public function categoryproducts()
+    public function showProduct($id)
     {
-        //
-        $items = category::all();
+        $itemDetail = Item::select('item_name','price','image_path','items.id','description')
+            ->join('images', 'items.id', '=', 'images.item_id')
+            ->where('items.id',$id)->get();
 
-        return view('eshop.categoryProducts')->with("items",$items);
+
+        $categoryInfo= Category::select('category_name','categories.id')
+            ->join('items', 'categories.id', '=', 'items.category_id')
+            ->where('items.id',$id)->get();
+
+
+
+        return view('eshop.productAjaxLoad')->with(["itemDetail"=>$itemDetail,'categoryInfo'=>$categoryInfo]);
+
+
     }
     /**
      * Show the form for creating a new resource.

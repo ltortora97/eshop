@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\category;
+use App\Http\Model\Category;
+use App\Http\Model\Item;
 
 class eshopController extends Controller
 {
@@ -18,14 +19,19 @@ class eshopController extends Controller
     public function index()
     {
         //
-         $items = category::all();
+        $categories = Category::all();
 
-        //print_r($items->title);
-       /*foreach($items as $item){
-           echo  $item->title."<br/>";
-       }*/
+        $latestItems = Item::select('item_name','price','image_path','items.id')
+            ->join('images', 'items.id', '=', 'images.item_id')
+            ->orderBy('items.id', 'desc')->take(5)->get();
+
+        //echo '<pre>';
+        //print_r($latestItems);
+        //die();
       
-        return view('eshop.index')->with("items",$items);
+        return view('eshop.index')->with([
+                                        "categories"=>$categories,
+                                        'latestItems5' =>$latestItems]);
     }
 
     /**

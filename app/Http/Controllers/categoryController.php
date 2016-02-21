@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Model\Image;
+use App\Http\Model\Category;
+use App\Http\Model\Item;
+
 class categoryController extends Controller
 {
     /**
@@ -49,9 +53,34 @@ class categoryController extends Controller
     public function show($id)
     {
 
-        $id;
+        //show all productrs belongs to category
+//        $id;
+//        $items = Item::all();
+//        $categories = category::all();
 
-        return view('eshop.categoryProducts');
+       // $itemDetails = Item::select('item_name','price')->where('category_id',$id)->get();
+
+        $itemDetails = Item::select('item_name','price','image_path','items.id')
+            ->join('images', 'items.id', '=', 'images.item_id')
+            ->where('category_id',$id)->get();
+
+        //echo '<pre>'.print_r($itemDetails,true).'<pre>';
+       // die();
+
+
+        $categoryname = category::select('category_name')
+                        ->where('id',$id)->get();
+
+
+
+        //echo '<pre>'.print_r($categories,true).'<pre>';
+    //die();
+
+
+
+
+
+        return view('eshop.categoryProducts')->with(['details'=>$itemDetails,'categoryname'=>$categoryname]);
     }
 
     /**
