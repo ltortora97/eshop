@@ -10,8 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+<<<<<<< HEAD
 kkkkkkkkkkk
 
+=======
+//////////
+>>>>>>> test
 
 
 Route::get('/test', function () {
