@@ -29,8 +29,10 @@
 						<li class="color"><span>Dolor sit amet</span>1234</li>
 						<li><span>Seddiam</span>1234</li>
 						<li class="color"><span>Nonumy eirmod</span>1234</li>
-					</ul>
-					<button>Add to Cart</button><img src="images/carts.gif" alt="" width="16" height="24" class="carts" />
+					</ul><br><br>
+					<a href="#">
+						<img class="add2cart" src="{{URL::to('images/cart.gif')}}" alt="" width="71" height="19" />
+					</a>
 				</div>
 			</div>
 

@@ -43,6 +43,62 @@ class productController extends Controller
 
 
     }
+
+    public function getProduct($name)
+    {
+        //return($name);
+
+        $categories = Category::all();
+/*
+        $latestItems = Item::select('item_name','price','image_path','items.id')
+            ->join('images', 'items.id', '=', 'images.item_id')
+            ->orderBy('items.id', 'desc')->take(5)->get();
+*/
+        //echo '<pre>';
+        //print_r($latestItems);
+        //die();
+
+        $itemDetail = Item::select('item_name','price','image_path','items.id','description')
+            ->join('images', 'items.id', '=', 'images.item_id')
+            ->where('items.item_name',$name)->get();
+
+
+        $categoryInfo= Category::select('category_name','categories.id')
+            ->join('items', 'categories.id', '=', 'items.category_id')
+            ->where('items.item_name',$name)->get();
+
+
+/*
+        echo '<pre>';
+        print_r($categoryInfo);
+        die();
+*/
+
+
+        return view('eshop.product')->with([
+                                            "categories"=>$categories,
+                                            'itemDetail'=>$itemDetail,
+                                            'categoryInfo'=>$categoryInfo
+                                                                            ]);
+
+        /*
+        $itemDetail = Item::select('item_name','price','image_path','items.id','description')
+            ->join('images', 'items.id', '=', 'images.item_id')
+            ->where('items.id',$id)->get();
+
+
+        $categoryInfo= Category::select('category_name','categories.id')
+            ->join('items', 'categories.id', '=', 'items.category_id')
+            ->where('items.id',$id)->get();
+
+
+
+        return view('eshop.productAjaxLoad')->with(["itemDetail"=>$itemDetail,'categoryInfo'=>$categoryInfo]);
+*/
+
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

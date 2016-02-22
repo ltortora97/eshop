@@ -23,20 +23,20 @@
 		    <a href="#"><img src="{{URL::to('images/flag6.gif')}}" alt="" width="19" height="11" /></a>
 		</div>
 		<div class="topblock2">
-			<img src="images/shopping.gif" alt="" width="24" height="24" class="shopping" />
+			<img src="{{URL::to('images/shopping.gif')}}" alt="" width="24" height="24" class="shopping" />
 		 	<p>Shopping cart</p> <p><strong>0</strong> <span>items</span></p>
 		</div>
 		<ul id="menu">
-			<li><img src="images/li.gif" alt="" width="19" height="29" /></li>
-			<li><a href="{{URL::to('')}}"><img src="images/but1_a.gif" alt="" width="90" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but2.gif" alt="" width="129" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but3.gif" alt="" width="127" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but4.gif" alt="" width="113" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but5.gif" alt="" width="132" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but6.gif" alt="" width="105" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but7.gif" alt="" width="82" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but8.gif" alt="" width="112" height="29" /></a></li>
-			<li><a href="index2.html"><img src="images/but9.gif" alt="" width="71" height="29" /></a></li>
+			<li><img src="{{URL::to('images/li.gif')}}" alt="" width="19" height="29" /></li>
+			<li><a href="{{URL::to('/')}}"><img src="{{URL::to('images/but1_a.gif')}}" alt="" width="90" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but2.gif')}}" alt="" width="129" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but3.gif')}}" alt="" width="127" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but4.gif')}}" alt="" width="113" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but5.gif')}}" alt="" width="132" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but6.gif')}}" alt="" width="105" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but7.gif')}}" alt="" width="82" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but8.gif')}}" alt="" width="112" height="29" /></a></li>
+			<li><a href="index2.html"><img src="{{URL::to('images/but9.gif')}}" alt="" width="71" height="29" /></a></li>
 		</ul>
 	</div>
 	
@@ -95,6 +95,7 @@
 		<p>Copyright &copy;. All rights reserved. <a href="http://www.turkhey.com/" title="Holiday Destinations in Turkey">Holiday Destinations in Turkey</a></p>
 	</div>
 	<script type="text/javascript" src="{{URL::to('lib/jquery/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{URL::to('lib/js-cookie/src/js.cookie.js')}}"></script>
 	<script type="text/javascript" src="{{URL::to('site.js')}}"></script>
 </body>
 </html>

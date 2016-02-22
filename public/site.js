@@ -100,4 +100,77 @@ $(document).ready(function()
 		e.preventDefault();
 	});
 
+/*
+	$(document).on('click','.add2cart',function(e)
+	{
+		var value,sumValue;
+		var productName = $(this).data('productname');
+		//alert(productName);
+
+
+		if(typeof Cookies.get(productName)==='undefined')
+		{
+			//alert('not exisit');
+			// value =1
+			Cookies.set(productName, 1, { expires: date });
+
+			if(typeof Cookies.get('sum')==='undefined')
+			{
+			//	alert('sum not exisit');
+				Cookies.set(sum, 1, { expires: date });
+			}
+			else
+			{
+			//	alert('sum exist');//increment by 1
+				sumValue = Number(Cookies.get('sum'))+1;
+			//	alert(sumValue + 'sum value now');
+				Cookies.set('sum', sumValue, { expires: date });
+			}
+		}
+		else
+		{
+			//alert('exist');
+			//value increment by 1
+			value = Number(Cookies.get(productName))+1;
+		//	alert(value + 'value now');
+			Cookies.set(productName, value, { expires: date });
+
+
+			//alert(Cookies.get("sum") + '111111111111');
+			if(typeof Cookies.get('sum')==='undefined')
+			{
+			//	alert('sum not exisit');
+				Cookies.set(sum, 1, { expires: date });
+			}
+			else
+			{
+			//	alert('sum exist');//increment by 1
+				sumValue = Number(Cookies.get('sum'))+1;
+			//	alert(sumValue + 'sum value now');
+				Cookies.set('sum', sumValue, { expires: date });
+			}
+		}
+
+
+
+
+		var date = new Date();
+		var minutes = 30;
+		date.setTime(date.getTime() + (minutes * 60 * 1000));
+	//	Cookies.set(productName, 'value', { expires: date });
+	//	Cookies.set('sum', 'value', { expires: date });
+
+
+
+		//document.cookie='"' + productid + '"username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC"';
+		//document.cookie="Ausername=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+		//document.cookie="username=John Doe";
+		e.preventDefault();
+	});
+
+
+
+*/
+
+
 });

@@ -24,6 +24,4 @@ Route::get('/', 'eshopController@index');
 Route::post('/category/{id}', 'categoryController@show');
 Route::post('/product/{id}', 'productController@showProduct');
 
-/////////////////////////////////////////////////////////////////////
-//
-/*aa*//////////////////////
+Route::get('/product/{name}', 'productController@getProduct');
